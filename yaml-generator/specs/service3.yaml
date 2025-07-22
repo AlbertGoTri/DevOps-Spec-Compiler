@@ -1,0 +1,6 @@
+service:
+  name: frontend
+  image: myapp/frontend:latest
+  replicas: 2
+  port: 3000
+

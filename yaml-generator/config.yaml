@@ -1,0 +1,6 @@
+inputPattern: specs/*.yaml
+outputPattern: generated/{{name}}-deployment.yaml
+language: yaml
+instruction: >
+  Transforma el spec de un servicio en manifiestos de Kubernetes
+  con Deployment y Service. Si hay secrets, usa references a `valueFrom`.

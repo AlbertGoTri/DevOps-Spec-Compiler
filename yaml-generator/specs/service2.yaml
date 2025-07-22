@@ -1,0 +1,6 @@
+service:
+  name: backend
+  image: myapp/backend:v1
+  replicas: 3
+  port: 8080
+  expose: true
