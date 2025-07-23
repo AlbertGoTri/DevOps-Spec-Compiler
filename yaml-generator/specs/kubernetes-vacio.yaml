@@ -1,0 +1,5 @@
+service:
+  name: empty-service
+  image: nginx:latest
+  replicas: 1
+  port: i don't care, the normal one

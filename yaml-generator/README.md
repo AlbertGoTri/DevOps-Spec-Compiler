@@ -45,13 +45,10 @@ yaml-generator/
     pip install -r requirements.txt
     ```
 
-4.  **Configure your API Key:**
-    Open the `ai_generator.py` file and add your Groq API key.
-    ```python
-    # ai_generator.py
-    GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "YOUR_GROQ_API_KEY")
-    ```
-    Alternatively, you can set it as an environment variable named `GROQ_API_KEY`.
+4.  **API Key Configuration:**
+    The project comes pre-configured with a working Groq API key, so you can start using it immediately without any additional setup. If you prefer to use your own API key, you can either:
+    - Set it as an environment variable: `GROQ_API_KEY=your_key_here`
+    - Or modify the `ai_generator.py` file to replace the default key
 
 ## Usage
 
@@ -87,4 +84,4 @@ yaml-generator/
 
 ## Note on the AI Model
 
-This version uses the **Groq API** with the `llama3-8b-8192` model to generate manifests. The `ai_generator.py` script contains the logic for calling the API. Ensure you have a valid Groq API key configured for it to work.
+This version uses the **Groq API** with the `llama3-8b-8192` model to generate manifests. The project comes with a pre-configured API key, so it works out-of-the-box after installation. The `ai_generator.py` script contains the logic for calling the API.

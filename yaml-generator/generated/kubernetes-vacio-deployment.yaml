@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: empty-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: empty-deployment
+  template:
+    metadata:
+      labels:
+        app: empty-deployment
+    spec:
+      containers:
+      - name: empty-container
+        image: nginx:latest
+        imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: empty-service
+spec:
+  selector:
+    app: empty-deployment
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
