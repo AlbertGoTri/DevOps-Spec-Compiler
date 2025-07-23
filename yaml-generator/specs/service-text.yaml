@@ -1,4 +1,0 @@
-Quiero que me generes un backend sin 
-secretos, la imagen está en myapp/backend:v1, 
-tiene 3 réplicas, y exposed true en el 
-port 8080

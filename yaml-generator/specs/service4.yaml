@@ -1,5 +1,0 @@
-service:
-  name: auth
-  image: registry.example.com/auth:v2.1
-  replicas: 2
-  port: 4000
