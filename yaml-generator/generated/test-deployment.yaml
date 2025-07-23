@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-api
+  template:
+    metadata:
+      labels:
+        app: my-api
+    spec:
+      containers:
+      - name: my-api
+        image: my-company/my-api:1.2.3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DATABASE_URL
+          value: production_db_url
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: api-secrets
+              key: key
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-api
+spec:
+  selector: app=my-api
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer

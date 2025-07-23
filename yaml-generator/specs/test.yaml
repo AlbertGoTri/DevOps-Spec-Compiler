@@ -1,0 +1,13 @@
+serviceName: my-api
+    image: my-company/my-api:1.2.3
+    replicas: 2
+    port: 8080
+    env:
+      - name: DATABASE_URL
+        value: "production_db_url"
+      - name: API_KEY
+        valueFrom:
+          secretKeyRef:
+            name: api-secrets
+            key: key
+            
