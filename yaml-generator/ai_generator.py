@@ -2,10 +2,14 @@ import logging
 import os
 import yaml
 from groq import Groq
+from dotenv import load_dotenv
+
+# --- Load environment variables ---
+load_dotenv('api_key.env')
 
 # --- Configuration ---
 # Add your Groq API key here
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "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")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 MODEL = 'llama3-8b-8192'
 
 client = Groq(api_key=GROQ_API_KEY)

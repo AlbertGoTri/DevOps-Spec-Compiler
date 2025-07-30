@@ -21,6 +21,8 @@ yaml-generator/
 ├── main.py
 ├── ai_generator.py
 ├── requirements.txt
+├── api_key.env.example (Copy this to api_key.env and add your API key)
+├── api_key.env (You need to create this file with your Groq API key)
 └── README.md
 ```
 
@@ -46,9 +48,21 @@ yaml-generator/
     ```
 
 4.  **API Key Configuration:**
-    The project comes pre-configured with a working Groq API key, so you can start using it immediately without any additional setup. If you prefer to use your own API key, you can either:
-    - Set it as an environment variable: `GROQ_API_KEY=your_key_here`
-    - Or modify the `ai_generator.py` file to replace the default key
+    You need to obtain a free API key from Groq and configure it:
+    
+    a. **Get your Groq API Key:**
+       - Visit [Groq Console](https://console.groq.com/)
+       - Sign up for a free account
+       - Navigate to the API Keys section
+       - Create a new API key
+    
+    b. **Create the API key file:**
+       - Copy the example file: `cp yaml-generator/api_key.env.example yaml-generator/api_key.env`
+       - Edit the `api_key.env` file and replace `your_groq_api_key_here` with your actual API key from Groq
+       - The file should look like:
+       ```
+       GROQ_API_KEY=your_actual_groq_api_key_here
+       ```
 
 ## Usage
 
@@ -84,4 +98,4 @@ yaml-generator/
 
 ## Note on the AI Model
 
-This version uses the **Groq API** with the `llama3-8b-8192` model to generate manifests. The project comes with a pre-configured API key, so it works out-of-the-box after installation. The `ai_generator.py` script contains the logic for calling the API.
+This version uses the **Groq API** with the `llama3-8b-8192` model to generate manifests. You need to obtain a free API key from Groq and configure it in the `api_key.env` file as described in the setup instructions. The `ai_generator.py` script contains the logic for calling the API.
